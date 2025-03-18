@@ -3,6 +3,9 @@ package com.assignment.traini8;
 import java.time.Instant;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Embedded;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -11,9 +14,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 // Training Center entity class
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Document(collection = "trainingCenters") // Collection name in MongoDB
 public class TrainingCenter {
+    @Id
     @JsonProperty("id")
-    private Integer id;
+    private String id;
 
     @NotBlank(message = "Center name is required")
     @Size(max = 40, message = "Center name must be less than 40 characters")
@@ -53,7 +58,7 @@ public class TrainingCenter {
     public TrainingCenter() {}
 
     // Parameterized constructor
-    public TrainingCenter(Integer id, String centerName, String centerCode, Address address, Integer studentCapacity, List<String> courceOffered,String contactEmail, String contactPhone ) {
+    public TrainingCenter(String id, String centerName, String centerCode, Address address, Integer studentCapacity, List<String> courceOffered,String contactEmail, String contactPhone ) {
         this.id = id;
         this.centerName = centerName;
         this.centerCode = centerCode;
@@ -69,11 +74,11 @@ public class TrainingCenter {
     }
 
     // Getters and Setters
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -127,6 +132,10 @@ public class TrainingCenter {
 
     public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
+    }
+
+    public void setCreatedOn() {
+        this.createdOn = Instant.now().getEpochSecond();
     }
 
     @Override

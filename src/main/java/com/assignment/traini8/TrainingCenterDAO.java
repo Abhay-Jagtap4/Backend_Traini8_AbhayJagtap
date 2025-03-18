@@ -1,8 +1,5 @@
 package com.assignment.traini8;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import org.springframework.stereotype.Repository;
 
 @Repository
