@@ -3,6 +3,8 @@ package com.assignment.traini8;
 import java.time.Instant;
 import java.util.List;
 
+import jakarta.persistence.Embedded;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,6 +26,8 @@ public class TrainingCenter {
     @JsonProperty("centerCode")
     private String centerCode;
 
+    @Embedded
+    @Valid // Validate nested object
     @JsonProperty("address")
     private Address address;
 
