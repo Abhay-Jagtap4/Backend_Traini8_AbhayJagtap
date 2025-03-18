@@ -2,14 +2,18 @@ package com.assignment.traini8;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import jakarta.validation.Valid;
 
 import java.net.URI;
 
 // REST Controller for managing TrainingCenters
 @RestController
 @RequestMapping("/trainingCenters")
+@Validated
 public class Controller {
     @Autowired
     private TrainingCenterDAO trainingCenterDAO;
@@ -23,7 +27,7 @@ public class Controller {
     // POST endpoint to add a new TrainingCenter
     @PostMapping("/create")
     public ResponseEntity<Object> 
-      addTrainingCenter(@RequestBody TrainingCenter trainingCenter) {
+      addTrainingCenter(@Valid @RequestBody TrainingCenter trainingCenter) {
       
         // Generate ID for the new TrainingCenter
         Integer id = trainingCenterDAO.getAllTrainingCenters()

@@ -3,6 +3,7 @@ package com.assignment.traini8;
 import java.time.Instant;
 import java.util.List;
 
+import jakarta.validation.constraints.*;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -12,9 +13,14 @@ public class TrainingCenter {
     @JsonProperty("id")
     private Integer id;
 
+    @NotBlank(message = "Center name is required")
+    @Size(max = 40, message = "Center name must be less than 40 characters")
     @JsonProperty("centerName")
     private String centerName;
 
+    @NotBlank(message = "Center code is required")
+    @Size(min = 12, max = 12, message = "Center code must be exactly 12 characters")
+    @Pattern(regexp = "^[a-zA-Z0-9]*$", message = "Center code must be alphanumeric")
     @JsonProperty("centerCode")
     private String centerCode;
 
@@ -30,9 +36,12 @@ public class TrainingCenter {
     @JsonProperty("createdOn")
     private Long createdOn;
 
+    @Email(message = "Invalid email format")
     @JsonProperty("contactEmail")
     private String contactEmail;
 
+    @NotBlank(message = "Contact phone is required")
+    @Pattern(regexp = "^[0-9]{10}$", message = "Contact phone must be exactly 10 digits")
     @JsonProperty("contactPhone")
     private String contactPhone;
 

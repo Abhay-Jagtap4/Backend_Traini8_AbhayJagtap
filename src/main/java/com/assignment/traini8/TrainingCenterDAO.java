@@ -11,10 +11,9 @@ public class TrainingCenterDAO {
 
     static {
         // Initialize with sample trainingCenters
-        Address address = new Address("Katraj", "Kondhwa", "Pune", "411048");
-        TrainingCenter trainingCenter = new TrainingCenter(1, "Vamshivat VOICE", "VV", address, 30, new ArrayList<>(Arrays.asList("DYS")), "vv@gmail.com", "123456");
-        trainingCenters.getTrainingCenterList().add(trainingCenter);
-        System.out.println("Training center: " + trainingCenter);
+        // Address address = new Address("Katraj", "Kondhwa", "Pune", "411048");
+        // TrainingCenter trainingCenter = new TrainingCenter(1, "Vamshivat VOICE", "VV", address, 30, new ArrayList<>(Arrays.asList("DYS")), "vv@gmail.com", "123456");
+        // trainingCenters.getTrainingCenterList().add(trainingCenter);
     }
 
     // Retrieve all trainingCenters
