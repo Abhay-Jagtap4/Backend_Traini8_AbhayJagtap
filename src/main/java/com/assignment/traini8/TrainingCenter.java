@@ -8,7 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.persistence.Embedded;
 import jakarta.validation.Valid;
+
+//For contraints through annotations as per the requirement
 import jakarta.validation.constraints.*;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

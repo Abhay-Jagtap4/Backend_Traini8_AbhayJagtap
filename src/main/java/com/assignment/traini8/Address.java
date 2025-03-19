@@ -22,10 +22,8 @@ public class Address {
     @JsonProperty("pincode")
     private String pincode;
 
-    // Default constructor
     public Address() {}
 
-    // Parameterized constructor
     public Address(String address, String city, String state, String pincode) {
         this.address = address;
         this.city = city;

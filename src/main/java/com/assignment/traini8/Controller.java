@@ -1,15 +1,11 @@
 package com.assignment.traini8;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import jakarta.validation.Valid;
 
-import java.net.URI;
 import java.util.List;
 
 // REST Controller for managing TrainingCenters
@@ -24,8 +20,12 @@ public class Controller {
   }
     // GET endpoint to fetch all TrainingCenters
     @GetMapping("/get")
-    public List<TrainingCenter> getTrainingCenters() {
-        return trainingCenterService.getAllTrainingCenters(); // ✅ Return all training centers
+    public List<TrainingCenter> getTrainingCenters(
+            @RequestParam(required = false) String centerName,
+            @RequestParam(required = false) String city,
+            @RequestParam(required = false) String state,
+            @RequestParam(required = false) Integer capacity) {
+        return trainingCenterService.getTrainingCenters(centerName, city, state, capacity);
     }
 
     // POST endpoint to add a new TrainingCenter

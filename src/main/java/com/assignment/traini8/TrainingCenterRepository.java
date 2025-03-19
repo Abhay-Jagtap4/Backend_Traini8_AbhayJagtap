@@ -7,3 +7,4 @@ import org.springframework.stereotype.Repository;
 public interface TrainingCenterRepository extends MongoRepository<TrainingCenter, String> {
 
 }
+
