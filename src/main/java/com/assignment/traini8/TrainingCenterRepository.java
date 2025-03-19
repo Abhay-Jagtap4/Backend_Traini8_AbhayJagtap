@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TrainingCenterRepository extends MongoRepository<TrainingCenter, String> {
-
+    //Required for save operation in post method
 }
 
