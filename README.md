@@ -11,18 +11,22 @@ Traini8: Problem Statement
 - **Request Body:**
 ```json
 {
-  "centerName": "Vamshivat VOICE",
-  "centerCode": "VV0000000001",
-  "address": {
-    "detailedAddress": "Katraj",
-    "city": "Kondhwa",
-    "state": "Pune",
-    "pincode": "411048"
-  },
-  "studentCapacity": 30,
-  "courceOffered": ["DYS"],
-  "contactEmail": "vv@gmail.com",
-  "contactPhone": "123456"
+    "id": "67da61307d3cb46e7c158717",
+    "centerName": "Vamshivat VOICE",
+    "centerCode": "VVVVVVVVVVVV",
+    "address": {
+        "detailedAddress": "Kondhwa",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "pincode": "411048"
+    },
+    "studentCapacity": 30,
+    "courceOffered": [
+        "DYS"
+    ],
+    "createdOn": 1742364976,
+    "contactEmail": "vv@gmail.com",
+    "contactPhone": "1234567890"
 }
 ```
 - **Response:**
@@ -49,20 +53,24 @@ curl -X GET "http://localhost:8080/trainingCenters/get?city=Pune&capacity=30"
 **Example Response:**
 ```json
 [
-  {
-    "centerName": "Vamshivat VOICE",
-    "centerCode": "VV0000000001",
-    "address": {
-      "detailedAddress": "Katraj",
-      "city": "Kondhwa",
-      "state": "Pune",
-      "pincode": "411048"
-    },
-    "studentCapacity": 30,
-    "courceOffered": ["DYS"],
-    "contactEmail": "vv@gmail.com",
-    "contactPhone": "123456"
-  }
+    {
+        "id": "67da61307d3cb46e7c158717",
+        "centerName": "Vamshivat VOICE",
+        "centerCode": "VVVVVVVVVVVV",
+        "address": {
+            "detailedAddress": "Kondhwa",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "pincode": "411048"
+        },
+        "studentCapacity": 30,
+        "courceOffered": [
+            "DYS"
+        ],
+        "createdOn": 1742364976,
+        "contactEmail": "vv@gmail.com",
+        "contactPhone": "1234567890"
+    }
 ]
 ```
 
