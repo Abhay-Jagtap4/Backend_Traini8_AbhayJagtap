@@ -80,7 +80,7 @@ curl -X GET "http://localhost:8080/trainingCenters/get?city=Pune&capacity=30"
 
 ### 1. **Clone the repository**  
 ```bash
-git clone https://github.com/Abhay-Jagtap4/Traini8.git
+git clone https://github.com/Abhay-Jagtap4/Backend_Traini8_AbhayJagtap.git
 ```
 
 ### 2. **Navigate to the project directory**  
